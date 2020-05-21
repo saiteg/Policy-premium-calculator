@@ -62,7 +62,7 @@ where:
  ## Build yourself:
  1. Clone or download project
  1. In project folder run: **.\mvnw install**
- 1. In folder "target" you'll find executible jar  
+ 1. In folder "target" you'll find executable jar  
  ## Run it:
  1. Double click projects jar
  1. Goto http://localhost:8080/swagger-ui.html
