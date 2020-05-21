@@ -46,3 +46,23 @@ Policy sub-object has 3 attributes:
 |Sub-object name |e.g. TV                        |
 |Sum insured     |Cost that will be covered by insurance|
 |Risk type       |e.g. FIRE, THEFT               |
+
+In order to add new "Risk type", just edit Policy sub-object and insert additional enum:  
+ * e.g. *FLOOD*("0.1", ">=", "100", "0.2")  
+ 
+where:
+ 1. "0.1" - default coefficient
+ 1. ">="  - coefficient determination equation operator
+ 1. "100" - check amount that we will compare to a sum of all sub-objects of this type
+ 1. "0.2" - coefficient that will used if sum will be equal or greater(">=") then check amount
+ 
+ # Quick start
+ ## Download latest release:
+ https://github.com/saiteg/Policy-premium-calculator/releases
+ ## Build yourself:
+ 1. Clone or download project
+ 1. In project folder run: **.\mvnw install**
+ 1. In folder "target" you'll find executible jar  
+ ## Run it:
+ 1. Double click projects jar
+ 1. Goto http://localhost:8080/swagger-ui.html
