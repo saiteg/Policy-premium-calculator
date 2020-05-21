@@ -54,7 +54,7 @@ where:
  1. "0.1" - default coefficient
  1. ">="  - coefficient determination equation operator
  1. "100" - check amount that we will compare to a sum of all sub-objects of this type
- 1. "0.2" - coefficient that will used if sum will be equal or greater(">=") then check amount
+ 1. "0.2" - coefficient that will be used if sum will be equal or greater(">=") then check amount
  
  # Quick start
  ## Download latest release:
