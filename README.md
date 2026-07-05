@@ -1,5 +1,11 @@
 # Policy premium calculator
- This is stand-alone application that expose API to calculate premium for insurance policy.
+ This is stand-alone application that expose API to calculate premium for insurance policy and manage private policy repositories.
+
+## Features:
+- **Premium Calculation**: Calculate insurance premiums using configurable risk coefficients
+- **Private Policy Repository**: Store and manage policies with private access control per user
+- **REST API**: Full CRUD operations for policy management
+- **Swagger Documentation**: Interactive API documentation at `/swagger-ui.html`
 
 ## Premium calculation formula:
 PREMIUM = PREMIUM_FIRE + PREMIUM_THEFT
@@ -66,3 +72,18 @@ where:
  ## Run it:
  1. Double click projects jar
  1. Goto http://localhost:8080/swagger-ui.html
+
+## API Endpoints:
+### Premium Calculator:
+- `POST /api/v1/calculate` - Calculate premium for a policy
+
+### Private Policy Repository:
+- `POST /api/v1/policies` - Create a new policy (requires `X-User-Id` header)
+- `GET /api/v1/policies` - Get all policies for user (requires `X-User-Id` header)
+- `GET /api/v1/policies/{policyNumber}` - Get specific policy (requires `X-User-Id` header)
+- `PUT /api/v1/policies/{policyNumber}` - Update policy (requires `X-User-Id` header)
+- `DELETE /api/v1/policies/{policyNumber}` - Delete policy (requires `X-User-Id` header)
+- `GET /api/v1/policies/{policyNumber}/exists` - Check if policy exists (requires `X-User-Id` header)
+
+### Private Access Control:
+All policy repository endpoints require an `X-User-Id` header for private access control. Users can only access their own policies.
